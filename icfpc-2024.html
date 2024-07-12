@@ -2,9 +2,12 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>Elventian blog</title>	
+	<title>ICFPC 2024 - Elventian blog</title>	
 	<meta name="author" content="elventian">
 	
+
+	<meta name="description" content="Write-up in Russian ICFPC, the annual competition associated with the functional programming conference, this year took place from June 28 to July 1. Ilya and I participated for the 11 time as Sunspear team with C++, and for us it was the most interesting year. Initially we got involved in …">
+
 
 	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
 	<link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
@@ -26,12 +29,18 @@
 	  <div class="wrapper">
 
 		  <div role="main" class="content">
-
-
-
-      <article>
-        <h1><a href="/icfpc-2024.html">ICFPC 2024</a></h1>
-        <p><a href="/kak-my-uchastvovali-v-icfpc-2024.html">Write-up in Russian</a></p>
+	<article class="full">
+			
+		<h1>ICFPC 2024</h1>
+		
+<div class="metadata">
+  <time datetime="2024-07-13T00:00:00+04:00" pubdate>Sat 13 July 2024</time>
+    <address class="vcard author">
+      by <a class="url fn" href="/author/elventian.html">elventian</a>
+    </address>
+  in <a href="/category/icfpc-writeup.html">ICFPC writeup</a>
+</div>		
+		<p><a href="/kak-my-uchastvovali-v-icfpc-2024.html">Write-up in Russian</a></p>
 <p>ICFPC, the annual competition associated with the functional programming conference, this year took place from June 28 to July 1. Ilya and I participated for the 11 time as <strong>Sunspear</strong> team with C++, and for us it was the most interesting year.</p>
 <p>Initially we got involved in all this after reading reports about the 2006 and 2007 years. The highlight of those years was that, besides the main task, there was some room for mystery; task wasn't clear at the start - you had to figure out some system devised by the organizers, and only then you could advance in solving the main task and earn points. Unfortunately, this approach is rarely taken by organizers (different people each year), and usually they give just a formal description of the task, which you solve all the contest. During our participation, only in 2020 there was an attempt to do something more intricated, but it didn’t turn out well - there was starting task that opened up a whole bunch of puzzles explaining the main task and how to solve it. Ideally interesting, it seemed. But the starting task was overcomplicated, and organizers were forced to provide hints, then solution diagrams, then pseudocode for the solution, which didn’t add enthusiasm to do anything ourselves.</p>
 <p>But enough history, let's return to 2024. Before the contest, there were several teasers, and they made my heart beat faster because they referenced years 2006, 2007, and 2020, but I cautiously refrained from getting too excited. But then contest begins, we open the rules, and there is no task, just a description of how to communicate with a server. The setting this year was as follows: the ancient secret society, which was the focus of the 2006, has actually left Earth (I can understand why), and apparently thrives somewhere among the stars, and we've got access to their cosmic server. All that is known is that if you send the string S'%4}).$%8 to the server, it responds with some mess of characters.</p>
@@ -60,25 +69,15 @@
 <p>After delving into the lambdaman21 code again, I realized that it was a loop in Alien. The Alien language doesn't have a built-in loop instruction, but with three lambdas, an if, and a little magic, one can be created, as the organizers demonstrated. In task 21, the loop runs from a very large (12210-digit) number to 0, each iteration finds the remainder of its division by 4, depending on the result adds one of four hardcoded characters to a certain string (which is the output of the program), and then divides the number by 4, decreasing it. My goodness, this is the algorithm for decompressing Alien int into a string of 4 different characters, exactly what I needed for compressing lambdaman solutions! I manually edited the Alien decompression code for my needs, wrote the compression in C++, uploaded new solutions, and Ilya simultaneously uploaded the manual solutions for the first three 3d tasks. Finally, we climbed up from the 129th place, where we had slipped to, to the 67th. It was 8 hours till the end of the competition, supposedly I should sleep a bit and make the final push, but I couldn't.</p>
 <p>I spent about 4 hours trying to understand the call-by-need strategy and implement caching, but when I've finished it, the program didn't work as expected. I had no energy left for debugging, so I abandoned it. Ilya periodically brought another 3d solution, keeping us from losing our place. He solved a total of 6 problems. Following his example, I manually solved several initial efficiency tasks before they grew too large. At some point, I realized that I had actually fully understood lambdaman21; it's just that my interpreter can't compute it for the same reason as <em>efficiency</em>, but C++ can 🙂. I translated lambdaman21's code from Alien to C++, finally got the task's map, solved it with my not-so-smart algorithm, and moved up just a couple of places - everyone else had also solved it.</p>
 <p>There wasn't any energy left for something big, and only about 40 minutes remained until the end of the competition. We could have tried to compress the last <em>spaceship</em> tasks to get some points, but we realized we just couldn't manage it right then. So, Ilya and I shook hands, and ICFPC was over for us. We took 64th place out of 470 registered teams, although only about 250 of them actually did something. Not the most impressive result, but I can't say we made any major wrong decisions or wasted a lot of time. Still, in future years, we need to force ourselves to stop and think before rushing to solve/use/invent something.</p>
-<p>It was a great contest in terms of organization: simple task descriptions on one screen, a wide range of opportunities to apply efforts and earn points, well-thought-out progression - the organizers correctly estimated how much time each subtask would take, placed the tasks in the right order, provided hints where needed, and kept silent where not. No tedious and boring wrappers for server exchanges, no JSONs, just pure enjoyment from solving tasks and looking at Alien code 🙂. Let's see what next year brings.</p>
-      </article>
+<p>It was a great contest in terms of organization: simple task descriptions on one screen, a wide range of opportunities to apply efforts and earn points, well-thought-out progression - the organizers correctly estimated how much time each subtask would take, placed the tasks in the right order, provided hints where needed, and kept silent where not. No tedious and boring wrappers for server exchanges, no JSONs, just pure enjoyment from solving tasks and looking at Alien code 🙂. Let's see what next year brings.</p>	
 
-      <hr />
+	</article>
 
-        <div>
-          <h3>Last posts</h3>
-          <ol class="archive">
-    
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
 
-
-      <li>
-<a href="/kak-my-uchastvovali-v-icfpc-2024.html" rel="bookmark" title="Permalink to Как мы участвовали в ICFPC 2024">Как мы участвовали в ICFPC 2024</a>
-  <time datetime="2024-07-13T00:00:00+04:00" pubdate>Sat 13 July 2024</time>
-</a>      </li>
-
-
-          </ol>
-        </div>
 
 		  </div>	
 		  
@@ -91,7 +90,7 @@
 	        <nav>
 	          <h2>Categories</h2>
 	          <ul>
-	              <li ><a href="/category/icfpc-writeup.html">ICFPC writeup</a></li>
+	              <li class="active"><a href="/category/icfpc-writeup.html">ICFPC writeup</a></li>
 	          </ul>
 	        </nav>
 
